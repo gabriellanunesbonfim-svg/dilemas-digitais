@@ -4,166 +4,439 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog</title>
+
+    <title>Desvende o Digital</title>
+
     <style>
-        header {
-            background-color: #183C63;
-            color: #FFFFFF;
-            text-align: center;
-            max-width: 800px;
-            margin-bottom: 30px;
-            margin: 0 auto;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: "yellow";
+            background: #0b1020;
+            color: #ffffff;
+        }
 
+        header {
+            background: linear-gradient(135deg, #111936, #35176d);
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid #7c3aed;
+        }
+
+        header h1 {
+            font-size: 42px;
+            color: #a78bfa;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            color: #dbeafe;
+        }
+
+        .subtitulo {
+            margin-top: 15px;
+            color: #94a3b8;
+        }
+
+        .interacoes {
+            margin-top: 25px;
+        }
+
+        button {
+            border: none;
+            background: #1e293b;
+            color: white;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #7c3aed;
+            transform: scale(1.05);
         }
 
         main {
-            background-color: #d4adcf;
-            color: #183C63;
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-direction: column;
-            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        img {
-            width: 80px;
-            height: 80px;
+        .introducao {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        div p {
-            font-weight: bold;
+        .introducao h2 {
+            color: #a78bfa;
+            font-size: 30px;
+            margin-bottom: 15px;
         }
 
-        .artigo-autor {
-            font-weight: bold;
+        .introducao p {
+            color: #cbd5e1;
+            line-height: 1.6;
         }
 
-        .imagem {
-            width: 200px;
-            height: 200px;
+        .posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         article {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
+            background: #111827;
+            border: 1px solid #273449;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
 
+        article:hover {
+            transform: translateY(-5px);
+            border-color: #7c3aed;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+        }
+
+        article img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        article h3 {
+            color: #c4b5fd;
+            margin-bottom: 10px;
+        }
+
+        article p {
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .autor {
+            font-size: 14px;
+            color: #818cf8;
+            margin-bottom: 15px;
+        }
+
+        .quiz {
+            margin-top: 50px;
+            padding: 35px;
+            text-align: center;
+            background: linear-gradient(135deg, #171d38, #25134b);
+            border: 1px solid #7c3aed;
+            border-radius: 15px;
+        }
+
+        .quiz h2 {
+            color: #c4b5fd;
+            margin-bottom: 15px;
+        }
+
+        .quiz p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            min-height: 25px;
         }
 
         footer {
-            background-color: #183C63;
-            color: white;
+            background: #070b16;
+            color: #94a3b8;
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer strong {
+            color: #a78bfa;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header {
+                padding: 45px 15px;
+            }
+
+            main {
+                padding: 0 15px;
+            }
+
+            .quiz {
+                padding: 25px 15px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <h1>Meu blog tech</h1>
-        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
-        <button>❤️<span>0</span></button>
-        <button>👍<span>0</span></button>
+
+        <h1>🔍 Desvende o Digital</h1>
+
+        <p>
+            Nem tudo que você vê na internet é o que parece.
+        </p>
+
+        <p class="subtitulo">
+            Aprenda a identificar manipulações, desinformação e conteúdos
+            criados para enganar.
+        </p>
+
+        <div class="interacoes">
+            <button>
+                ❤️ <span>0</span>
+            </button>
+
+            <button>
+                👍 <span>0</span>
+            </button>
+        </div>
 
     </header>
+
+
     <main>
-        <article>
-            <div>
-                <img src="imagem-blog.png" alt="livro com símbolos de tecnologia">
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Alexandra</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
-            </div>
-            <div>
-                <img src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg" class="imagem">
-            </div>
-        </article>
+
+        <section class="introducao">
+
+            <h2>O que é Manipulação Digital?</h2>
+
+            <p>
+                Manipulação digital é o uso de ferramentas e tecnologias para
+                alterar, criar ou modificar conteúdos digitais. Imagens, vídeos,
+                áudios e textos podem ser modificados para transmitir uma
+                informação falsa ou distorcida.
+            </p>
+
+        </section>
+
+
+        <section class="posts">
+
+            <article>
+
+                <img
+                    src="imagem-blog.png"
+                    alt="Representação de tecnologia digital">
+
+                <h3>📰 Fake News</h3>
+
+                <p class="autor">
+                    Informação e responsabilidade
+                </p>
+
+                <p>
+                    Notícias falsas podem ser criadas para provocar medo,
+                    influenciar opiniões ou simplesmente conseguir mais
+                    visualizações e compartilhamentos.
+                </p>
+
+                <button class="curtir">
+                    ❤️ <span>0</span>
+                </button>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg"
+                    alt="Imagem relacionada à inteligência artificial">
+
+                <h3>🤖 Deepfakes</h3>
+
+                <p class="autor">
+                    Quando a tecnologia imita a realidade
+                </p>
+
+                <p>
+                    Deepfakes utilizam inteligência artificial para criar ou
+                    modificar vídeos, imagens e áudios, fazendo uma pessoa
+                    parecer dizer ou fazer algo que nunca aconteceu.
+                </p>
+
+                <button class="curtir">
+                    ❤️ <span>0</span>
+                </button>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="imagem-blog.png"
+                    alt="Computador representando manipulação de imagens">
+
+                <h3>🖼️ Imagens Manipuladas</h3>
+
+                <p class="autor">
+                    Nem toda imagem é uma prova
+                </p>
+
+                <p>
+                    Fotografias podem ser editadas, recortadas ou combinadas
+                    com outros elementos. Por isso, é importante investigar
+                    a origem de uma imagem antes de acreditar nela.
+                </p>
+
+                <button class="curtir">
+                    ❤️ <span>0</span>
+                </button>
+
+            </article>
+
+
+            <article>
+
+                <img
+                    src="imagem-blog.png"
+                    alt="Pessoa utilizando redes sociais">
+
+                <h3>📱 Redes Sociais</h3>
+
+                <p class="autor">
+                    Pense antes de compartilhar
+                </p>
+
+                <p>
+                    Algoritmos podem mostrar conteúdos semelhantes aos que
+                    você já consome. Isso pode criar uma visão limitada da
+                    realidade e facilitar a propagação de informações falsas.
+                </p>
+
+                <button class="curtir">
+                    ❤️ <span>0</span>
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <section class="quiz">
+
+            <h2>🧠 Real ou Manipulado?</h2>
+
+            <p>
+                Uma imagem viral aparece nas redes sociais dizendo:
+                "Especialistas confirmam que essa tecnologia será obrigatória
+                amanhã". O post não apresenta fonte ou link para a pesquisa.
+            </p>
+
+            <p>
+                O que você faria?
+            </p>
+
+            <button onclick="responder('investigar')">
+                🔍 Procuraria a fonte
+            </button>
+
+            <button onclick="responder('compartilhar')">
+                📤 Compartilharia imediatamente
+            </button>
+
+            <div id="resultado"></div>
+
+        </section>
 
     </main>
-    <main>
-        <article>
-            <div>
-                <img src="imagem-blog.png" alt="livro com símbolos de tecnologia">
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Alexandra</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
-            </div>
-            <div>
-                <img src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg" class="imagem">
-            </div>
 
-        </article>
-    </main>
-    <main>
-        <article>
-            <div>
-                <img src="imagem-blog.png" alt="livro com símbolos de tecnologia">
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Alexandra</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
-            </div>
-            <div>
-                <img src="anupam-raisim-kerketta-2RUSOSHt7wQ-unsplash.svg" class="imagem">
-            </div>
-        </article>
-    </main>
-    <main>
-        <article>
-            <div>
-                <img src="imagem-blog.png" alt="livro com símbolos de tecnologia">
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Alexandra</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-                <button>❤️<span>0</span></button>
-                <button>👎<span>0</span></button>
-            </div>
-            <div>
-                <img src="imagem-blog.png" alt="livro com símbolos de tecnologia" class="imagem">
-            </div>
-        </article>
-    </main>
 
     <footer>
-        <p> 2026 Meu Blog Tech | Desenvolvido por Alexandra</p>
+
+        <p>
+            <strong>Desvende o Digital</strong> © 2026
+        </p>
+
+        <p>
+            Projeto desenvolvido para a Maratona Tech
+        </p>
+
     </footer>
 
+
     <script>
-        const botoes = document.querySelectorAll("button");
+
+        // Sistema de curtidas
+        const botoes = document.querySelectorAll(".curtir");
+
         botoes.forEach(function (botao) {
+
             let curtiu = false;
-            botao.addEventListener("click", botaoClicado);
-            function botaoClicado() {
-                console.log("fui clicado");
-                let texto = botao.querySelector("span");
+
+            botao.addEventListener("click", function () {
+
+                const contador = botao.querySelector("span");
+
                 if (curtiu === false) {
-                    texto.textContent++;
+
+                    contador.textContent =
+                        Number(contador.textContent) + 1;
+
                     curtiu = true;
+
                 } else {
-                    texto.textContent--;
+
+                    contador.textContent =
+                        Number(contador.textContent) - 1;
+
                     curtiu = false;
+
                 }
+
+            });
+
+        });
+
+
+        // Quiz
+        function responder(resposta) {
+
+            const resultado =
+                document.getElementById("resultado");
+
+            if (resposta === "investigar") {
+
+                resultado.textContent =
+                    "✅ Boa escolha! Sempre verifique a fonte antes de acreditar ou compartilhar.";
+
+                resultado.style.color = "#4ade80";
+
+            } else {
+
+                resultado.textContent =
+                    "⚠️ Cuidado! Antes de compartilhar, procure a fonte e confirme a informação.";
+
+                resultado.style.color = "#facc15";
+
             }
-        })
+
+        }
+
     </script>
 
 </body>
